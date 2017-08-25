@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" guice-stage="DEVELOPMENT" verbose="2" name="Failed suite [MainSuite]" parallel="tests">
+  <listeners>
+    <listener class-name="sample.helper.ExtentReporterNG"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    <listener class-name="sample.helper.Screenshot"/>
+  </listeners>
+  <test name="Chrome Test(failed)" parallel="tests">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="sample.test.LoginTest">
+        <methods>
+          <include name="setup"/>
+          <include name="sendMail"/>
+          <include name="browserSetup"/>
+          <include name="driverClose"/>
+          <include name="loginTest" invocation-numbers="0 1"/>
+        </methods>
+      </class> <!-- sample.test.LoginTest -->
+    </classes>
+  </test> <!-- Chrome Test(failed) -->
+</suite> <!-- Failed suite [MainSuite] -->
